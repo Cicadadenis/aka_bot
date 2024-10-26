@@ -1,2 +1,2 @@
-pysqlite3
+pysqlite
 telethon
