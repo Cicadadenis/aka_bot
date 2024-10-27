@@ -85,7 +85,7 @@ async def admin(event):
         f"<code>/clear</code> — Очистить список ссылок\n"
         f"<code>/exit</code> — Выйти из админ-меню"
     )
-    await event.reply(admin_text)
+    await event.reply(admin_text, parse_mode="HTML")
 
 # Команда /exitadmin для выхода из админ-меню
 @bot.on(events.NewMessage(pattern='/exit'))
