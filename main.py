@@ -77,13 +77,13 @@ async def admin(event):
     # Активируем режим админ-меню
     admin_mode = True
     admin_text = (
-        f"Админ-меню:\n"
-        f"<code>/setlinks</code> <ссылки через пробел> — Установить новые ссылки пачкой\n"
-        f"<code>/showlinks</code> — Показать все доступные ссылки\n"
-        f"<code>/add</code> <ID> — Добавить нового администратора\n"
-        f"<code>/showadmins</code> — Показать всех администраторов\n"
-        f"<code>/clear</code> — Очистить список ссылок\n"
-        f"<code>/exit</code> — Выйти из админ-меню"
+        f"<b>Админ-меню:</b>\n\n"
+        f"<code>/setlinks</code> <ссылки через пробел> — <b>Установить новые ссылки пачкой</b>\n\n"
+        f"<code>/showlinks</code> — <b>Показать все доступные ссылки</b>\n\n"
+        f"<code>/add</code> <ID> — <b>Добавить нового администратора</b>\n\n"
+        f"<code>/showadmins</code> — <b>Показать всех администраторов</b>\n\n"
+        f"<code>/clear</code> — <b>Очистить список ссылок</b>\n\n"
+        f"<code>/exit</code> — <b>Выйти из админ-меню</b>"
     )
     await event.reply(admin_text, parse_mode="HTML")
 
