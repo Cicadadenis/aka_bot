@@ -77,17 +77,17 @@ async def admin(event):
     admin_mode = True
     admin_text = (
         "Админ-меню:\n"
-        "/setlinks <ссылки через пробел> — Установить новые ссылки пачкой\n"
-        "/showlinks — Показать все доступные ссылки\n"
-        "/addadmin <ID> — Добавить нового администратора\n"
-        "/showadmins — Показать всех администраторов\n"
-        "/clearlinks — Очистить список ссылок\n"
-        "/exitadmin — Выйти из админ-меню"
+        "<code>/setlinks</code> <ссылки через пробел> — Установить новые ссылки пачкой\n"
+        "<code>/showlinks</code> — Показать все доступные ссылки\n"
+        "<code>/add</code> <ID> — Добавить нового администратора\n"
+        "<code>/showadmins</code> — Показать всех администраторов\n"
+        "<code>/clear</code> — Очистить список ссылок\n"
+        "<code>/exit</code> — Выйти из админ-меню"
     )
     await event.reply(admin_text)
 
 # Команда /exitadmin для выхода из админ-меню
-@bot.on(events.NewMessage(pattern='/exitadmin'))
+@bot.on(events.NewMessage(pattern='/exit'))
 async def exit_admin(event):
     global admin_mode
     if event.sender_id not in get_admin_ids():
@@ -135,7 +135,7 @@ async def show_links(event):
         await event.reply("В данный момент нет доступных ссылок.")
 
 # Команда /addadmin для добавления нового администратора
-@bot.on(events.NewMessage(pattern='/addadmin'))
+@bot.on(events.NewMessage(pattern='/add'))
 async def add_admin(event):
     global admin_mode
     if event.sender_id != main_admin_id or not admin_mode:
@@ -170,7 +170,7 @@ async def show_admins(event):
         await event.reply("В данный момент нет администраторов.")
 
 # Команда /clearlinks для очистки списка ссылок
-@bot.on(events.NewMessage(pattern='/clearlinks'))
+@bot.on(events.NewMessage(pattern='/clear'))
 async def clear_links(event):
     global admin_mode
     if event.sender_id not in get_admin_ids() or not admin_mode:
