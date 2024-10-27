@@ -1,6 +1,7 @@
 import sqlite3
 from telethon import TelegramClient, events
-
+from telethon.extensions import markdown
+from telethon.tl.types import MessageEntityBold, MessageEntityItalic, MessageEntityTextUrl
 # Данные для подключения
 api_id = 1325339
 api_hash = "b826075fd7ea762e6b9f853146d47995"
